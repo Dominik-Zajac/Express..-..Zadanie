@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+/* GET list of tourists page. */
 router.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Welcome'
-  });
+    res.render('tourists', {
+        title: 'List Tourists'
+    });
 });
 
 module.exports = router;
