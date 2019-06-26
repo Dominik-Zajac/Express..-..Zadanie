@@ -5,14 +5,20 @@ block flights-list
         tr
             th Id
             th Flight name
+            th Departure Date
+            th Arrivel Date
             th Number of places
+            th Price
             th Edit
             th Delete
         each item, index in data
             tr
                 td=index
                 td=item.title
+                td=item.departureDate.toLocaleString()
+                td=item.arrivelDate.toLocaleString()
                 td=item.places
+                td=item.ticketPrice
                 td
                     a Edit
                 td 

@@ -10,9 +10,32 @@ block content
     form(method='post')
         p
             label Flight name
-            input(type='text' name='title' value=body.title || '')
+            input(type='text' 
+                name='title' 
+                value=body.title || '')
+        p
+            label Departure date
+            input(type='datetime-local' 
+                name='departureDate' 
+                value=body.departureDate || '')
+        p
+            label Arrivel date
+            input(type='datetime-local' 
+                name='arrivelDate' 
+                value=body.arrivelDate || '' min=departureDate)
         p
             label Number of places
-            input(type='number' name='places' value=body.places || '')
+            input(type='number' 
+                name='places'
+                min='1'
+                max='10' 
+                value=body.places || '')
+        p
+            label Ticket price($)
+            input(type='number' 
+                name='ticketPrice'
+                min='1'
+                max='100' 
+                value=body.ticketPrice || '')
         p
             input(type='submit' value='Save')

@@ -3,11 +3,31 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #353b48;
 }
 
-/* Navigation */
-nav .active {
-  color: red;
+nav .nav-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+nav .list-item {
+  padding: 1% 2%;
+}
+
+nav .list-item a {
+  font-size: 2rem;
+  color: #fbc531;
+  text-decoration: none;
+}
+
+nav .list-item .active {
+  color: #e84118;
 }
