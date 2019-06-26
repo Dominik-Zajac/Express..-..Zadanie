@@ -1,0 +1,19 @@
+extends ../flights
+
+block flights-list
+    table
+        tr
+            th Id
+            th Flight name
+            th Number of places
+            th Edit
+            th Delete
+        each item, index in data
+            tr
+                td=index
+                td=item.title
+                td=item.places
+                td
+                    a Edit
+                td 
+                    a(href=`/flights/delete/${item._id}`) X

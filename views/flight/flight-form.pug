@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  div.flight-form
+    h1.title #{title}
+
+    if errors !== undefined
+        span='All fields are required'
+
+    form(method='post')
+        p
+            label Flight name
+            input(type='text' name='title' value=body.title || '')
+        p
+            label Number of places
+            input(type='number' name='places' value=body.places || '')
+        p
+            input(type='submit' value='Save')

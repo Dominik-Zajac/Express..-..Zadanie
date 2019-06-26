@@ -7,7 +7,7 @@ var config = require('./config');
 var mongoose = require('mongoose');
 
 mongoose.connect(config.database, {
-  useNewUrlParses: true
+  useNewUrlParser: true
 });
 
 // connection to the database
