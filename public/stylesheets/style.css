@@ -51,3 +51,112 @@ nav .list-item a {
 nav .list-item .active {
   color: #e84118;
 }
+
+/* Flights */
+.section-flights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.section-flights .title {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.section-flights .add-btn {
+  min-width: 150px;
+  padding: 15px 10px;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: inherit;
+  border-radius: 5px;
+  border: 3px solid #fbc531;
+}
+
+.section-flights .add-btn:hover {
+  border-color: #fffb00;
+}
+
+/* flights table */
+.flights-table {
+  margin-top: 2%;
+  border-radius: 5px;
+  border-collapse: collapse;
+}
+
+.flights-table th {
+  background-color: #718093;
+}
+
+.flights-table td,
+.flights-table th {
+  padding: 10px 15px;
+  text-align: center;
+  border: 1px solid #353b48;
+}
+
+.flights-table tr:hover {
+  background-color: rgba(113, 128, 147, 0.3);
+}
+
+.flights-table .delete-btn {
+  padding: 10px 20px;
+  width: 100vw;
+  color: #e84118;
+  text-decoration: none;
+}
+
+/* flight form */
+.flight-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.flight-form .title {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.flight-form form {
+  margin: 1% 0;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid #353b48;
+}
+
+.flight-form label {
+  display: block;
+  font-size: 12px;
+  text-align: left;
+}
+
+.flight-form input {
+  min-width: 250px;
+  margin: 5px 0 20px 0;
+  padding: 8px 12px;
+  border: 1px solid #718093;
+  background-color: inherit;
+}
+
+.flight-form .save-btn {
+  min-width: 150px;
+  padding: 15px 10px;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: inherit;
+  border-radius: 5px;
+  border: 3px solid #fbc531;
+  cursor: pointer;
+  outline: none;
+}

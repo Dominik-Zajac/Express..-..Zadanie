@@ -1,9 +1,9 @@
 extends ../flights
 
 block flights-list
-    table
+    table.flights-table
         tr
-            th Id
+            th Nr
             th Flight name
             th Departure Date
             th Arrivel Date
@@ -13,7 +13,7 @@ block flights-list
             th Delete
         each item, index in data
             tr
-                td=index
+                td=index + 1
                 td=item.title
                 td=item.departureDate.toLocaleString()
                 td=item.arrivelDate.toLocaleString()
@@ -22,4 +22,4 @@ block flights-list
                 td
                     a Edit
                 td 
-                    a(href=`/flights/delete/${item._id}`) X
+                    a(class='delete-btn' href=`/flights/delete/${item._id}`) X

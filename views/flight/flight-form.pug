@@ -8,34 +8,34 @@ block content
         span='All fields are required'
 
     form(method='post')
-        p
-            label Flight name
+        div
+            label Flight name:
             input(type='text' 
                 name='title' 
                 value=body.title || '')
-        p
-            label Departure date
+        div
+            label Departure date:
             input(type='datetime-local' 
                 name='departureDate' 
                 value=body.departureDate || '')
-        p
-            label Arrivel date
+        div
+            label Arrivel date:
             input(type='datetime-local' 
                 name='arrivelDate' 
                 value=body.arrivelDate || '' min=departureDate)
-        p
-            label Number of places
+        div
+            label Number of places:
             input(type='number' 
                 name='places'
                 min='1'
                 max='10' 
                 value=body.places || '')
-        p
-            label Ticket price($)
+        div
+            label Ticket price ($):
             input(type='number' 
                 name='ticketPrice'
                 min='1'
                 max='100' 
                 value=body.ticketPrice || '')
-        p
-            input(type='submit' value='Save')
+        div
+            button(type='submit' class='save-btn') Save
