@@ -1,6 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #dcdde1;
+  font-family: Roboto;
+}
+
+/* Home */
+.section-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.section-home .title {
+  font-size: 5rem;
+  letter-spacing: 3px;
+}
+
+.section-home .subtitle {
+  font-size: 3rem;
+  margin-top: -2%;
+  letter-spacing: 1px;
 }
 
 /* Navigation */
