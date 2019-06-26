@@ -22,6 +22,13 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// downloading the current website address
+app.use(function (req, res, next) {
+  res.locals.activeLink = req.path;
+
+  next();
+})
+
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
 app.use('/tourists', touristsRouter);

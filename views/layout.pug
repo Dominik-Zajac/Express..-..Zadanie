@@ -1,7 +1,16 @@
 doctype html
+mixin navLink(title, url)
+  li
+    a(href=url class=activeLink===url ? 'active' : '')=title
+
 html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    nav
+      ul
+        +navLink('Home', '/')
+        +navLink('Flights', '/flights')
+        +navLink('Tourists', '/tourists')
     block content
