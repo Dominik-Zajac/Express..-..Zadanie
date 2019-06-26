@@ -3,6 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var config = require('./config');
+var mongoose = require('mongoose');
+
+mongoose.connect(config.database, {
+  useNewUrlParses: true
+});
+
+// connection to the database
+var database = mongoose.connection;
+database.on('error', console.error.bind(console, 'connection error:'));
 
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
