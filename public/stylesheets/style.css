@@ -24,7 +24,7 @@ body {
 }
 
 /* Navigation */
-nav {
+/* nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@ nav .list-item a {
 
 nav .list-item .active {
   color: #e84118;
-}
+} */
 
 /* Flights */
 .section-flights {
