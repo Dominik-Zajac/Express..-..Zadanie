@@ -12,7 +12,6 @@ const newsSchema = new Schema({
     },
     arrivelDate: {
         type: Date,
-        default: +new Date() + 7 * 24 * 60 * 60 * 1000,
         required: true
     },
     places: {

@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  div.section-home
+    h1.title #{title}
+    table.flights-table
+    tr
+        th Nr
+        th Flight name
+        th Departure Date
+        th Arrivel Date
+        th Number of places
+        th Price
+    each item, index in data
+        tr
+            td=index + 1
+            td=item.title
+            td=item.departureDate.toLocaleString()
+            td=item.arrivelDate.toLocaleString()
+            td=item.places
+            td=item.ticketPrice

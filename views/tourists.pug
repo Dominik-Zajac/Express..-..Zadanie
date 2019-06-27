@@ -3,3 +3,5 @@ extends layout
 block content
   div.section-tourists
     h1.title #{title}
+    a(href='tourists/add' class='add-btn') Add new tourist
+    block tourists-list
