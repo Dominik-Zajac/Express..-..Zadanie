@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+    div.tourist-form
+        h1.title #{title}
+
+        if errors !== undefined
+            span='All fields are required!'
+                    
+        form(method='post')
+            div
+                label First name:
+                input(type='text' 
+                    name='firstName'
+                    minlength='4'
+                    maxlength='10'
+                    value=body.firstName || '')
+            div
+                label Last name:
+                input(type='text' 
+                    name='lastName'
+                    minlength='4'
+                    maxlength='12' 
+                    value=body.lastName || '')
+            div
+                label Sex:
+                input(type='radio' 
+                    name='sex' 
+                    value=body.man || '')
+                input(type='radio' 
+                    name='sex' 
+                    value=body.woman || '')
+            div
+                label State:
+                input(type='text' 
+                    name='state'
+                    minlength='4'
+                    maxlength='15'
+                    value=body.state || '')
+            div
+                label Notes:
+                textarea(name='notes'
+                    maxlength='30' 
+                    )=body. || ''
+            div
+                button(type='submit' class='save-btn') Save

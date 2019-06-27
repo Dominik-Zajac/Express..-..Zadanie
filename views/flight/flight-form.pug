@@ -1,41 +1,43 @@
 extends ../layout
 
 block content
-  div.flight-form
-    h1.title #{title}
+    div.flight-form
+        h1.title #{title}
 
-    if errors !== undefined
-        span='All fields are required'
+        if errors !== undefined
+            span='All fields are required!'
 
-    form(method='post')
-        div
-            label Flight name:
-            input(type='text' 
-                name='title' 
-                value=body.title || '')
-        div
-            label Departure date:
-            input(type='datetime-local' 
-                name='departureDate' 
-                value=body.departureDate || '')
-        div
-            label Arrivel date:
-            input(type='datetime-local' 
-                name='arrivelDate' 
-                value=body.arrivelDate || '' min=departureDate)
-        div
-            label Number of places:
-            input(type='number' 
-                name='places'
-                min='1'
-                max='10' 
-                value=body.places || '')
-        div
-            label Ticket price ($):
-            input(type='number' 
-                name='ticketPrice'
-                min='1'
-                max='100' 
-                value=body.ticketPrice || '')
-        div
-            button(type='submit' class='save-btn') Save
+        form(method='post')
+            div
+                label Flight name:
+                input(type='text' 
+                    name='title'
+                    minlength='5'
+                    maxlength='15'
+                    value=body.title || '')
+            div
+                label Departure date:
+                input(type='datetime-local' 
+                    name='departureDate' 
+                    value=body.departureDate || '')
+            div
+                label Arrivel date:
+                input(type='datetime-local' 
+                    name='arrivelDate' 
+                    value=body.arrivelDate || '' min=departureDate)
+            div
+                label Number of places:
+                input(type='number' 
+                    name='places'
+                    min='1'
+                    max='10' 
+                    value=body.places || '')
+            div
+                label Ticket price ($):
+                input(type='number' 
+                    name='ticketPrice'
+                    min='1'
+                    max='100' 
+                    value=body.ticketPrice || '')
+            div
+                button(type='submit' class='save-btn') Save
