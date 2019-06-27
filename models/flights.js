@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const newsSchema = new Schema({
+const flightSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -24,4 +24,4 @@ const newsSchema = new Schema({
     },
 });
 
-module.exports = mongoose.model('Flightss', newsSchema);
+module.exports = mongoose.model('Flights', flightSchema);
