@@ -23,10 +23,10 @@ block content
                     maxlength='12' 
                     value=body.lastName || '')
             div
-                label Sex:
+                //- label Sex:
                 select(name='sex')
-                    option(value=body.sex || '') man
-                    option(value=body.sex || '') woman
+                    option(value='man' || '') Man
+                    option(value='woman' || '') Woman
             div
                 label State:
                 input(type='text' 

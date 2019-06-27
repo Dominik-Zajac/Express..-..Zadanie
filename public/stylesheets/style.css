@@ -24,7 +24,7 @@ body {
 }
 
 /* Navigation */
-/* nav {
+nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -50,10 +50,11 @@ nav .list-item a {
 
 nav .list-item .active {
   color: #e84118;
-} */
+}
 
-/* Flights */
-.section-flights {
+/* Flights and tourists*/
+.section-flights,
+.section-tourists {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,12 +62,14 @@ nav .list-item .active {
   min-height: 90vh;
 }
 
-.section-flights .title {
+.section-flights .title,
+.section-tourists .title {
   font-size: 3rem;
   letter-spacing: 1px;
 }
 
-.section-flights .add-btn {
+.section-flights .add-btn,
+.section-tourists .add-btn {
   min-width: 150px;
   padding: 15px 10px;
   color: black;
@@ -78,33 +81,40 @@ nav .list-item .active {
   border: 3px solid #fbc531;
 }
 
-.section-flights .add-btn:hover {
+.section-flights .add-btn:hover,
+.section-tourists .add-btn:hover {
   border-color: #fffb00;
 }
 
 /* flights table */
-.flights-table {
+.flights-table,
+.tourists-table {
   margin-top: 2%;
   border-radius: 5px;
   border-collapse: collapse;
 }
 
-.flights-table th {
+.flights-table th,
+.tourists-table th {
   background-color: #718093;
 }
 
 .flights-table td,
-.flights-table th {
+.flights-table th,
+.tourists-table td,
+.tourists-table th {
   padding: 10px 15px;
   text-align: center;
   border: 1px solid #353b48;
 }
 
-.flights-table tr:hover {
+.flights-table tr:hover,
+.tourists-table tr:hover {
   background-color: rgba(113, 128, 147, 0.3);
 }
 
-.flights-table .delete-btn {
+.flights-table .delete-btn,
+.tourists-table .delete-btn {
   padding: 10px 20px;
   width: 100vw;
   color: #e84118;
@@ -112,7 +122,8 @@ nav .list-item .active {
 }
 
 /* flight form */
-.flight-form {
+.flight-form,
+.tourist-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,25 +131,31 @@ nav .list-item .active {
   min-height: 90vh;
 }
 
-.flight-form .title {
+.flight-form .title,
+.tourist-form .title {
   font-size: 3rem;
   letter-spacing: 1px;
 }
 
-.flight-form form {
+.flight-form form,
+.tourist-form form {
   margin: 1% 0;
   padding: 25px;
   text-align: center;
   border: 1px solid #353b48;
 }
 
-.flight-form label {
+.flight-form label,
+.tourist-form label {
   display: block;
   font-size: 12px;
   text-align: left;
 }
 
-.flight-form input {
+.flight-form input,
+.tourist-form input,
+.tourist-form textarea,
+.tourist-form select {
   min-width: 250px;
   margin: 5px 0 20px 0;
   padding: 8px 12px;
@@ -146,7 +163,16 @@ nav .list-item .active {
   background-color: inherit;
 }
 
-.flight-form .save-btn {
+.tourist-form select {
+  min-width: 276px;
+}
+
+.tourist-form option {
+  font-size: 16px;
+}
+
+.flight-form .save-btn,
+.tourist-form .save-btn {
   min-width: 150px;
   padding: 15px 10px;
   font-size: 18px;

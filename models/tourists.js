@@ -12,6 +12,7 @@ const touristSchema = new Schema({
     },
     sex: {
         type: String,
+        // required: true
     },
     state: {
         type: String,
