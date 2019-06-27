@@ -24,12 +24,9 @@ block content
                     value=body.lastName || '')
             div
                 label Sex:
-                input(type='radio' 
-                    name='sex' 
-                    value=body.man || '')
-                input(type='radio' 
-                    name='sex' 
-                    value=body.woman || '')
+                select(name='sex')
+                    option(value=body.sex || '') man
+                    option(value=body.sex || '') woman
             div
                 label State:
                 input(type='text' 
@@ -40,6 +37,12 @@ block content
             div
                 label Notes:
                 textarea(name='notes'
-                    maxlength='30')=body.notes || ''
+                    rows='4'
+                    maxlength='50')=body.notes || ''
+            div
+                label Date of birth:
+                input(type='date'
+                    name='dateOfBirth'
+                    value=body.dateOfBirth || '')
             div
                 button(type='submit' class='save-btn') Save

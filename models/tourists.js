@@ -11,8 +11,7 @@ const touristSchema = new Schema({
         required: true
     },
     sex: {
-        type: Boolean,
-        required: true
+        type: String,
     },
     state: {
         type: String,
@@ -22,7 +21,7 @@ const touristSchema = new Schema({
         type: String
     },
     dateOfBirth: {
-        type: Number,
+        type: Date,
         required: true
     },
 });

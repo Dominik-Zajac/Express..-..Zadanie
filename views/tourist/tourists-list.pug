@@ -20,7 +20,7 @@ block tourists-list
                 td=item.sex
                 td=item.state
                 td=item.notes
-                td=item.dateOfBirth
+                td=item.dateOfBirth.toDateString()
                 td
                     a(href=`tourists/update/${item._id}`) Edit
                 td
