@@ -4,7 +4,7 @@ block content
     div.tourist-form
         h1.title #{title}
 
-        if errors !== undefined
+        if errors !== ''
             span='All fields are required!'
                     
         form(method='post')
@@ -23,7 +23,7 @@ block content
                     maxlength='12' 
                     value=body.lastName || '')
             div
-                //- label Sex:
+                label Sex:
                 select(name='sex')
                     option(value='man' || '') Man
                     option(value='woman' || '') Woman

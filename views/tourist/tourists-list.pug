@@ -22,6 +22,6 @@ block tourists-list
                 td=item.notes
                 td=item.dateOfBirth.toDateString()
                 td
-                    a(href=`tourists/update/${item._id}`) Edit
+                    a(href=`tourists/update/${item._id}` class='edit-button') Edit
                 td
-                    a(class='delete-btn' href=`/tourists/delete/${item._id}`) X
+                    a(href=`/tourists/delete/${item._id}` class='delete-btn') X

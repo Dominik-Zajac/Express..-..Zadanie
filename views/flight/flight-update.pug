@@ -12,13 +12,13 @@ block content
                     th Arrivel Date
                     th Number of places
                     th Price
-                    tr
-                        td=index + 1
-                        td=item.title
-                        td=item.departureDate.toLocaleString()
-                        td=item.arrivelDate.toLocaleString()
-                        td=item.places
-                        td=item.ticketPrice
+                tr
+                    td=index + 1
+                    td=item.title
+                    td=item.departureDate.toLocaleString()
+                    td=item.arrivelDate.toLocaleString()
+                    td=item.places
+                    td=item.ticketPrice
         div.edit-container
             div.edit-row
                 h2.title-table_tourists All tourists
@@ -33,7 +33,7 @@ block content
                             td=index + 1
                             td=object.firstName
                             td=object.lastName                        
-                            if item.tourists.length === item.places
+                            if item.tourists.length === item.places 
                                 td Lack of seats
                             else
                                 td
@@ -47,12 +47,10 @@ block content
                         th Last name
                         th Delete
                         th Index in array
-                    each item, index in data
-                        - var places = item.places
-                        - var n = 1;
-                            while n <= item.tourists.length
+                        - var repeat = 1;
+                            while repeat <= item.tourists.length
                                 tr
-                                    td=n++
+                                    td=repeat++
                                     td=item.tourists[index].firstName
                                     td=item.tourists[index].lastName
                                     td

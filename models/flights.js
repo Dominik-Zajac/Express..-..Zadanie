@@ -10,10 +10,12 @@ const flightSchema = new Schema({
     departureDate: {
         type: Date,
         required: true,
+        default: Date.now,
     },
     arrivelDate: {
         type: Date,
         required: true,
+        default: Date.now,
     },
     places: {
         type: Number,

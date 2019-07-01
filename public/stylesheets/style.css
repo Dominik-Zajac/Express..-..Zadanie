@@ -59,7 +59,7 @@ nav .list-item .active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 80vh;
 }
 
 .section-flights .title,
@@ -104,6 +104,7 @@ nav .list-item .active {
 .tourists-table td,
 .tourists-table th {
   padding: 10px 15px;
+  text-transform: capitalize;
   text-align: center;
   border: 1px solid #353b48;
 }
@@ -144,6 +145,7 @@ nav .list-item .active {
   justify-content: center;
   align-items: center;
   min-height: 90vh;
+  margin-top: 5%;
 }
 
 .flight-form .title,

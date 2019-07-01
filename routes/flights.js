@@ -27,7 +27,6 @@ router.get('/add', (req, res) => {
 // Add flight
 router.post('/add', (req, res) => {
 	const body = req.body;
-
 	const flightData = new Flights(body);
 	const errors = flightData.validateSync();
 
@@ -42,10 +41,7 @@ router.post('/add', (req, res) => {
 			return;
 		}
 		res.redirect('/flights');
-
-	})
-
-
+	});
 });
 
 // Delete flight
@@ -72,14 +68,29 @@ router.get('/update/:id', (req, res) => {
 
 // Delete tourist with flight
 router.get('/update/:idFlight/delete/:id', (req, res) => {
-	Flights.findById(req.params.idFlight, (err, doc) => {
-		// const flights = doc;
-		// flights.tourists.findand(req.params.id, err => {
-		// 	// console.log(req.params.id)
-		// 	console.log('dziala')
-		// doc.tourists = 
-		// })
+	// Flights.findById(req.params.idFlight, (err, doc) => {
+	// const flights = doc;
+	// flights.tourists.findand(req.params.id, err => {
+	// 	// console.log(req.params.id)
+	// 	console.log('dziala')
+	// doc.tourists = 
+	// })
+	// ], {
+	// 	$set: {
+	// 		deleted: Date()
+	// 	}
+	// }, {
+	// 	remove: true
+	// }, calback)
+	// Flights.deleteOne(req.params.idFlight, err => {
 
+	// console.log(req.params.idFlight);
+	Flights.findAndModify({}, [], doc, {
+		remove: true
+	}, callback => {
+
+		console.log(doc);
+		console.log(callback)
 		res.redirect(`/flights/update/${req.params.idFlight}`);
 	});
 	// const flight = Flights.find({

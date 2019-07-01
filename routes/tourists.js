@@ -27,7 +27,6 @@ router.get('/add', (req, res) => {
 // Add tourist
 router.post('/add', (req, res) => {
 	const body = req.body;
-
 	const touristData = new Tourists(body);
 	const errors = touristData.validateSync();
 
@@ -36,9 +35,10 @@ router.post('/add', (req, res) => {
 			res.render('tourist/tourist-form', {
 				title: 'Add tourist',
 				errors,
-				body,
+				body: {},
 				flights: []
 			});
+			return;
 		}
 
 		res.redirect('/tourists');

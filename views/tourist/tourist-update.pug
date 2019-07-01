@@ -1,17 +1,17 @@
 extends ../layout
 
 block content
-    div.section-tourists
-        h1.title #{title}
-        table.tourists-table
-            tr
-                th Nr
-                th First name
-                th Last name
-                th Sex
-                th State
-                th Date of birth
-            each item, index in data
+    each item, index in data
+        div.section-tourists
+            h1.title #{title}
+            table.tourists-table
+                tr
+                    th Nr
+                    th First name
+                    th Last name
+                    th Sex
+                    th State
+                    th Date of birth
                 tr
                     td=index + 1
                     td=item.firstName
@@ -19,22 +19,37 @@ block content
                     td=item.sex
                     td=item.state
                     td=item.dateOfBirth.toDateString()
-    div.edit-container
-        div.edit-row
-            h2.title-list_flights All flights
-            table.list-flights
-                tr
-                    th Nr
-                    th Flight name
-                    th Number of places
-                    th Add to tourist
-                each object, index in flights
+        div.edit-container
+            div.edit-row
+                h2.title-table_flights All flights
+                table.flights-table
                     tr
-                        td=index + 1
-                        td=object.title
-                        td=object.places
-                        td
-                            a(href='#') Add 
-        div.edit-row
-            h2.title-list_tourists Flights in tourist
-            ul.list-flights
+                        th Nr
+                        th Flight name
+                        th Number of places
+                        th Add to tourist
+                    each object, index in flights
+                        tr
+                            td=index + 1
+                            td=object.title
+                            td=object.places
+                            if item.flights.length === '1'
+                                td Max one flight
+                            else
+                                td
+                                    a(href=`${item._id}/add/${object._id}` class='add-button') Add 
+            div.edit-row
+                h2.title-table_flights Flights in tourist
+                table.flights-table
+                    tr
+                        th Nr
+                        th Flight name
+                        th Price
+                        th Delete
+                        - var repeat = 1;
+                        tr
+                            td=index + 1
+                            //- td=item.flights[index].title
+                            //- td=item.flights[index].price
+                            td
+                                a(href=`${item._id}/delete/${item.flights[index._id]}` class='delete-btn') X
