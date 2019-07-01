@@ -1,21 +1,40 @@
 extends ../layout
 
 block content
-  div.section-home
-    h1.title #{title}
-    table.flights-table
-    tr
-        th Nr
-        th Flight name
-        th Departure Date
-        th Arrivel Date
-        th Number of places
-        th Price
-    each item, index in data
-        tr
-            td=index + 1
-            td=item.title
-            td=item.departureDate.toLocaleString()
-            td=item.arrivelDate.toLocaleString()
-            td=item.places
-            td=item.ticketPrice
+    div.section-flights
+        h1.title #{title}
+        table.flights-table
+            tr
+                th Nr
+                th Flight name
+                th Departure Date
+                th Arrivel Date
+                th Number of places
+                th Price
+            each item, index in data
+                tr
+                    td=index + 1
+                    td=item.title
+                    td=item.departureDate.toLocaleString()
+                    td=item.arrivelDate.toLocaleString()
+                    td=item.places
+                    td=item.ticketPrice
+    div.edit-container
+        div.edit-row
+            h2.title-list_tourists All tourists
+            table.list-tourists
+                tr
+                    th Nr
+                    th First name
+                    th Last name
+                    th Add to flight
+                each object, index in tourists
+                    tr
+                        td=index + 1
+                        td=object.firstName
+                        td=object.lastName
+                        td
+                            a(href='#') Add 
+        div.edit-row
+            h2.title-list_tourists Tourists in flight
+            ul.list-tourists

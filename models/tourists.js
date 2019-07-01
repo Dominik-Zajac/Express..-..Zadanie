@@ -4,26 +4,25 @@ const Schema = mongoose.Schema;
 const touristSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        required: true,
     },
     lastName: {
         type: String,
-        required: true
+        required: true,
     },
     sex: {
         type: String,
-        // required: true
     },
     state: {
         type: String,
-        required: true
+        required: true,
     },
     notes: {
-        type: String
+        type: String,
     },
     dateOfBirth: {
         type: Date,
-        required: true
+        required: true,
     },
 });
 

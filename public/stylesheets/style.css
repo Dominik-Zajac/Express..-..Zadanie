@@ -86,7 +86,7 @@ nav .list-item .active {
   border-color: #fffb00;
 }
 
-/* flights table */
+/* flights and tourists list */
 .flights-table,
 .tourists-table {
   margin-top: 2%;
@@ -121,7 +121,7 @@ nav .list-item .active {
   text-decoration: none;
 }
 
-/* flight form */
+/* flight and tourist form */
 .flight-form,
 .tourist-form {
   display: flex;
@@ -186,3 +186,20 @@ nav .list-item .active {
   cursor: pointer;
   outline: none;
 }
+
+/* flight and tourist edit */
+.edit-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit-container .edit-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-container .title-list_tourists {
+  font-size: 25px;
+}
+
+.edit-container .list-tourists {}
