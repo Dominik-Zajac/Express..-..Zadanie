@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+    div.section-tourists
+        h1.title #{title}
+        table.tourists-table
+            tr
+                th Nr
+                th First name
+                th Last name
+                th Sex
+                th State
+                th Date of birth
+            each item, index in data
+                tr
+                    td=index + 1
+                    td=item.firstName
+                    td=item.lastName
+                    td=item.sex
+                    td=item.state
+                    td=item.dateOfBirth.toDateString()
+    div.edit-container
+        div.edit-row
+            h2.title-list_flights All flights
+            table.list-flights
+                tr
+                    th Nr
+                    th Flight name
+                    th Number of places
+                    th Add to tourist
+                each object, index in flights
+                    tr
+                        td=index + 1
+                        td=object.title
+                        td=object.places
+                        td
+                            a(href='#') Add 
+        div.edit-row
+            h2.title-list_tourists Flights in tourist
+            ul.list-flights

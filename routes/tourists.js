@@ -1,5 +1,6 @@
 const express = require('express');
 const Tourists = require('../models/tourists');
+const Flights = require('../models/flights');
 
 const router = express.Router();
 
@@ -54,9 +55,12 @@ router.get('/update/:id', (req, res) => {
 	Tourists.find({
 		_id: req.params.id
 	}, (err, data) => {
-		res.render('tourist/tourist-update', {
-			title: 'Edit tourist',
-			data
+		Flights.find({}, (err, flights) => {
+			res.render('tourist/tourist-update', {
+				title: 'Edit tourist',
+				data,
+				flights
+			});
 		});
 	});
 });
