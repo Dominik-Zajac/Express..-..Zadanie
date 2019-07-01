@@ -1,40 +1,60 @@
 extends ../layout
 
 block content
-    div.section-flights
-        h1.title #{title}
-        table.flights-table
-            tr
-                th Nr
-                th Flight name
-                th Departure Date
-                th Arrivel Date
-                th Number of places
-                th Price
-            each item, index in data
-                tr
-                    td=index + 1
-                    td=item.title
-                    td=item.departureDate.toLocaleString()
-                    td=item.arrivelDate.toLocaleString()
-                    td=item.places
-                    td=item.ticketPrice
-    div.edit-container
-        div.edit-row
-            h2.title-list_tourists All tourists
-            table.list-tourists
+    each item, index in data
+        div.section-flights
+            h1.title #{title}
+            table.flights-table
                 tr
                     th Nr
-                    th First name
-                    th Last name
-                    th Add to flight
-                each object, index in tourists
+                    th Flight name
+                    th Departure Date
+                    th Arrivel Date
+                    th Number of places
+                    th Price
                     tr
                         td=index + 1
-                        td=object.firstName
-                        td=object.lastName
-                        td
-                            a(href='#') Add 
-        div.edit-row
-            h2.title-list_tourists Tourists in flight
-            ul.list-tourists
+                        td=item.title
+                        td=item.departureDate.toLocaleString()
+                        td=item.arrivelDate.toLocaleString()
+                        td=item.places
+                        td=item.ticketPrice
+        div.edit-container
+            div.edit-row
+                h2.title-table_tourists All tourists
+                table.tourists-table
+                    tr
+                        th Nr
+                        th First name
+                        th Last name
+                        th Add to flight
+                    each object, index in tourists
+                        tr
+                            td=index + 1
+                            td=object.firstName
+                            td=object.lastName                        
+                            if item.tourists.length === item.places
+                                td Lack of seats
+                            else
+                                td
+                                    a(href=`${item._id}/add/${object._id}` class='add-button') Add
+            div.edit-row
+                h2.title-table_tourists Tourists in flight
+                table.tourists-table
+                    tr
+                        th Nr
+                        th First name
+                        th Last name
+                        th Delete
+                        th Index in array
+                    each item, index in data
+                        - var places = item.places
+                        - var n = 1;
+                            while n <= item.tourists.length
+                                tr
+                                    td=n++
+                                    td=item.tourists[index].firstName
+                                    td=item.tourists[index].lastName
+                                    td
+                                        a(href=`${item._id}/delete/${item.tourists[index]._id}` class='delete-btn') X
+                                    td=index++

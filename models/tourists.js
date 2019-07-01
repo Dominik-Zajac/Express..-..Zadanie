@@ -24,6 +24,11 @@ const touristSchema = new Schema({
         type: Date,
         required: true,
     },
+    flights: {
+        type: Array,
+        required: true,
+        default: []
+    }
 });
 
 module.exports = mongoose.model('Tourists', touristSchema);

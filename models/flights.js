@@ -24,9 +24,9 @@ const flightSchema = new Schema({
         required: true,
     },
     tourists: {
-        type: Object,
+        type: Array,
         required: true,
-        default: {}
+        default: []
     }
 });
 

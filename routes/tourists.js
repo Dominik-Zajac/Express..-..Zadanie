@@ -19,7 +19,8 @@ router.get('/add', (req, res) => {
 	res.render('tourist/tourist-form', {
 		title: 'Add tourist',
 		errors: '',
-		body: {}
+		body: {},
+		flights: []
 	});
 });
 
@@ -35,7 +36,8 @@ router.post('/add', (req, res) => {
 			res.render('tourist/tourist-form', {
 				title: 'Add tourist',
 				errors,
-				body
+				body,
+				flights: []
 			});
 		}
 

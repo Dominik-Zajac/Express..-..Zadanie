@@ -20,6 +20,6 @@ block flights-list
                 td=item.places
                 td=item.ticketPrice
                 td
-                    a(href=`/flights/update/${item._id}`) Edit
+                    a(href=`/flights/update/${item._id}` class='edit-button') Edit
                 td 
                     a(href=`/flights/delete/${item._id}` class='delete-btn') X

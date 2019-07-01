@@ -121,6 +121,21 @@ nav .list-item .active {
   text-decoration: none;
 }
 
+.edit-button,
+.add-button {
+  padding: 10px 20px;
+  width: 100vw;
+  text-decoration: none;
+}
+
+.edit-button {
+  color: #e4a908;
+}
+
+.add-button {
+  color: green;
+}
+
 /* flight and tourist form */
 .flight-form,
 .tourist-form {
@@ -202,4 +217,6 @@ nav .list-item .active {
   font-size: 25px;
 }
 
-.edit-container .list-tourists {}
+.title-table_tourists {
+  text-align: center;
+}
