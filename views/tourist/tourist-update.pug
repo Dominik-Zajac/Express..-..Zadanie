@@ -33,7 +33,7 @@ block content
                             td=index + 1
                             td=object.title
                             td=object.places
-                            if item.flights.length === '1'
+                            if item.flights.length === 3
                                 td Max one flight
                             else
                                 td
@@ -46,10 +46,13 @@ block content
                         th Flight name
                         th Price
                         th Delete
+                        th Index in array
                         - var repeat = 1;
-                        tr
-                            td=index + 1
-                            //- td=item.flights[index].title
-                            //- td=item.flights[index].price
-                            td
-                                a(href=`${item._id}/delete/${item.flights[index._id]}` class='delete-btn') X
+                            while repeat <= item.flights.length
+                                tr
+                                    td=repeat++
+                                    td=item.flights[index].title
+                                    td=item.flights[index].ticketPrice
+                                    td
+                                        a(href=`${item._id}/delete/${item.flights[index._id]}` class='delete-btn') X
+                                    td=index++

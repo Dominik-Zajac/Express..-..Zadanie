@@ -69,7 +69,7 @@ router.get('/update/:id', (req, res) => {
 
 // Delete tourist with flight
 router.get('/update/:idTourist/delete/:id', (req, res) => {
-	Flight.findById(req.params.id, (err, doc) => {
+	Flights.findById(req.params.id, (err, doc) => {
 		Tourists.findByIdAndUpdate(req.params.idTourist, {
 			$pull: {
 				'flights': doc
