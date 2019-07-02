@@ -67,21 +67,32 @@ router.get('/update/:id', (req, res) => {
 	});
 });
 
-// Update tourist
-router.post('/update/:id', (req, res) => {
-	const body = req.body;
+// Delete tourist with flight
+router.get('/update/:idTourist/delete/:id', (req, res) => {
+	Flight.findById(req.params.id, (err, doc) => {
+		Tourists.findByIdAndUpdate(req.params.idTourist, {
+			$pull: {
+				'flights': doc
+			}
+		}, err => {
+			console.log(err);
+			res.redirect(`/tourists/update/${req.params.idTourist}`);
 
-	const touristData = new Tourists(body);
+		});
+	});
+});
 
-	touristData.save(err => {
-		if (err) {
-			res.render('tourist/tourist-update', {
-				title: 'Edit flight',
-				body
-			});
-		}
-
-		res.redirect('/tourists');
+// Update tourist (Add flight)
+router.get('/update/:idTourist/add/:id', (req, res) => {
+	Flights.findById(req.params.id, (err, doc) => {
+		Tourists.findByIdAndUpdate(req.params.idTourist, {
+			$push: {
+				'flights': doc
+			}
+		}, err => {
+			console.log(err);
+			res.redirect(`/tourists/update/${req.params.idTourist}`);
+		});
 	});
 });
 

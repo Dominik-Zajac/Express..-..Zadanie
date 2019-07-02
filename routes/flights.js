@@ -68,7 +68,6 @@ router.get('/update/:id', (req, res) => {
 
 // Delete tourist with flight
 router.get('/update/:idFlight/delete/:id', (req, res) => {
-
 	Tourists.findById(req.params.id, (err, doc) => {
 		Flights.findByIdAndUpdate(req.params.idFlight, {
 			$pull: {
@@ -76,57 +75,10 @@ router.get('/update/:idFlight/delete/:id', (req, res) => {
 			}
 		}, err => {
 			console.log(err);
-
 			res.redirect(`/flights/update/${req.params.idFlight}`);
+
 		});
 	});
-
-	// console.log(req.params.id)
-	// Flights.findByIdAndUpdate(req.params.idFlight, {
-	// 	$pull: {
-	// 		'tourists': req.params.id
-	// 	}
-	// }, err => {
-	// 	console.log(req.params.idFlight)
-	// 	console.log(req.params.id)
-	// 	res.redirect(`/flights/update/${req.params.idFlight}`);
-
-	// })
-	// Flights.findById(req.params.idFlight, (err, doc) => {
-	// const flights = doc;
-	// flights.tourists.findand(req.params.id, err => {
-	// 	// console.log(req.params.id)
-	// 	console.log('dziala')
-	// doc.tourists = 
-	// })
-	// ], {
-	// 	$set: {
-	// 		deleted: Date()
-	// 	}
-	// }, {
-	// 	remove: true
-	// }, calback)
-	// Flights.deleteOne(req.params.idFlight, err => {
-
-	// console.log(req.params.idFlight);
-	// Flights.findOneAndRemove({
-	// 	tourists: req.params.idFlight
-	// }, (err, doc) => {
-
-
-	// 	console.log(doc);
-	// });
-	// const flight = Flights.find({
-	// 	_id: req.params.idFlight
-	// }, (err, res) => {
-	// 	return res;
-	// })
-	// console.log(flight)
-
-	// Flights.findByIdAndRemove(req.params.id, err => {
-	// 	res.redirect(`/flights/update/${req.params.idFlight}`);
-
-	// })
 });
 
 // Update flight (Add passanger)
@@ -138,8 +90,8 @@ router.get('/update/:idFlight/add/:id', (req, res) => {
 			}
 		}, err => {
 			console.log(err);
-
 			res.redirect(`/flights/update/${req.params.idFlight}`);
+
 		});
 	});
 });
