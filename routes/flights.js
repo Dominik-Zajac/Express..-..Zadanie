@@ -68,6 +68,17 @@ router.get('/update/:id', (req, res) => {
 
 // Delete tourist with flight
 router.get('/update/:idFlight/delete/:id', (req, res) => {
+	console.log(req.params.id)
+	Flights.findByIdAndUpdate(req.params.idFlight, {
+		$pull: {
+			'tourists': req.params.id
+		}
+	}, err => {
+		console.log(req.params.idFlight)
+		console.log(req.params.id)
+		res.redirect(`/flights/update/${req.params.idFlight}`);
+
+	})
 	// Flights.findById(req.params.idFlight, (err, doc) => {
 	// const flights = doc;
 	// flights.tourists.findand(req.params.id, err => {
@@ -85,14 +96,13 @@ router.get('/update/:idFlight/delete/:id', (req, res) => {
 	// Flights.deleteOne(req.params.idFlight, err => {
 
 	// console.log(req.params.idFlight);
-	Flights.findAndModify({}, [], doc, {
-		remove: true
-	}, callback => {
+	// Flights.findOneAndRemove({
+	// 	tourists: req.params.idFlight
+	// }, (err, doc) => {
 
-		console.log(doc);
-		console.log(callback)
-		res.redirect(`/flights/update/${req.params.idFlight}`);
-	});
+
+	// 	console.log(doc);
+	// });
 	// const flight = Flights.find({
 	// 	_id: req.params.idFlight
 	// }, (err, res) => {
@@ -108,36 +118,17 @@ router.get('/update/:idFlight/delete/:id', (req, res) => {
 
 // Update flight
 router.get('/update/:idFlight/add/:id', (req, res) => {
-	console.log('dziala update POST');
-	const findFlight = Flights.findById(req.params.idFlight);
-	console.log(findFlight)
-	// Flights.findByIdAndUpdate(req.params.idFlight, req.body.profile, function (err, doc, res) {
-	// 	console.log(req.params.idFlight);
-	// 	console.log(doc)
-	// 	console.log(req)
+	Tourists.findById(req.params.id, (err, doc) => {
+		Flights.findByIdAndUpdate(req.params.idFlight, {
+			$push: {
+				'tourists': doc
+			}
+		}, err => {
+			console.log(err);
 
-	// error: any errors that occurred
-	// doc: the document before updates are applied if `new: false`, or after updates if `new = true`
-	// });
-	// const data = new Flights(doc);
-	// console.log(data)
-	// const body = req.body;
-
-	// console.log(body);
-	// const flightData = new Flights();
-
-	// console.log(flightData.tourists);
-
-	// const touristData = new Tourists();
-
-	// console.log(touristData.flights)
-	// touristData.save(err => {
-	// 	if (err) {
-
-	// 	}
-	// });
-	res.redirect(`/flights/update/${req.params.idFlight}`)
-
+			res.redirect(`/flights/update/${req.params.idFlight}`);
+		});
+	});
 });
 
 
