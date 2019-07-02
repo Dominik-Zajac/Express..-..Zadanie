@@ -68,17 +68,30 @@ router.get('/update/:id', (req, res) => {
 
 // Delete tourist with flight
 router.get('/update/:idFlight/delete/:id', (req, res) => {
-	console.log(req.params.id)
-	Flights.findByIdAndUpdate(req.params.idFlight, {
-		$pull: {
-			'tourists': req.params.id
-		}
-	}, err => {
-		console.log(req.params.idFlight)
-		console.log(req.params.id)
-		res.redirect(`/flights/update/${req.params.idFlight}`);
 
-	})
+	Tourists.findById(req.params.id, (err, doc) => {
+		Flights.findByIdAndUpdate(req.params.idFlight, {
+			$pull: {
+				'tourists': doc
+			}
+		}, err => {
+			console.log(err);
+
+			res.redirect(`/flights/update/${req.params.idFlight}`);
+		});
+	});
+
+	// console.log(req.params.id)
+	// Flights.findByIdAndUpdate(req.params.idFlight, {
+	// 	$pull: {
+	// 		'tourists': req.params.id
+	// 	}
+	// }, err => {
+	// 	console.log(req.params.idFlight)
+	// 	console.log(req.params.id)
+	// 	res.redirect(`/flights/update/${req.params.idFlight}`);
+
+	// })
 	// Flights.findById(req.params.idFlight, (err, doc) => {
 	// const flights = doc;
 	// flights.tourists.findand(req.params.id, err => {
@@ -116,7 +129,7 @@ router.get('/update/:idFlight/delete/:id', (req, res) => {
 	// })
 });
 
-// Update flight
+// Update flight (Add passanger)
 router.get('/update/:idFlight/add/:id', (req, res) => {
 	Tourists.findById(req.params.id, (err, doc) => {
 		Flights.findByIdAndUpdate(req.params.idFlight, {
